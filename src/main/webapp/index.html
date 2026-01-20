@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация на TeaVM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1><i class="fas fa-lock"></i> Система авторизации</h1>
+        <p>Демонстрация Java → TeaVM → WebAssembly</p>
+    </header>
+
+    <main>
+        <div id="app" class="app">
+            <!-- Сюда будет встроено Java приложение -->
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i> Загрузка приложения...
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3><i class="fas fa-info-circle"></i> Тестовые пользователи:</h3>
+            <ul>
+                <li>Логин: <code>admin</code>, Пароль: <code>admin123</code></li>
+                <li>Логин: <code>user1</code>, Пароль: <code>user1123</code></li>
+                <li>Логин: <code>test</code>, Пароль: <code>test123</code></li>
+            </ul>
+            <p>Или используйте email вместо логина</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Скомпилировано с помощью TeaVM |
+            <a href="https://github.com/konsoletyper/teavm" target="_blank">
+                <i class="fab fa-github"></i> TeaVM GitHub
+            </a>
+        </p>
+    </footer>
+</div>
+
+<!-- Подключаем сгенерированный TeaVM код -->
+<script src="classes.js"></script>
+<script>
+    // TeaVM 0.13.0 создает функцию с именем класса
+    main();
+</script>
+</body>
+</html>
